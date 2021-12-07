@@ -21,7 +21,7 @@ server.use((req, res, next) => {
   next()
 })
 
-let dbArray = ['speaking.json', 'listening.json', 'reading.json'];
+let dbArray = ['reading.json', 'listening.json', 'reading.json'];
 dbArray.forEach(element => {
   const router = jsonServer.router(element);
   console.log("router: " + router);
