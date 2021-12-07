@@ -2,9 +2,6 @@ const jsonServer = require('json-server')
 const server = jsonServer.create()
 const middlewares = jsonServer.defaults()
 
-const reading = require('./mongo').ielts_reading;
-console.log('reading: ' + reading)
-
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
 
