@@ -2,6 +2,9 @@ const jsonServer = require('json-server')
 const server = jsonServer.create()
 const middlewares = jsonServer.defaults()
 
+const reading = require('./mongo').ielts_reading;
+console.log('reading: ' + reading)
+
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
 
@@ -24,7 +27,7 @@ server.use((req, res, next) => {
 let dbArray = ['speaking.json', 'listening.json', 'reading.json'];
 dbArray.forEach(element => {
   const router = jsonServer.router(element);
-  console.log(router);
+  console.log("router: " + router);
   // Use default router
   server.use('/api', router);
 })
